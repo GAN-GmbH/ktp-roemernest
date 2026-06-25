@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kindertagespflege Römernest – Lisa Neufeld. Herzliche Betreuung für Kleinkinder (1–3 Jahre) in familiärer Umgebung in Morsbach-Rom. Bis zu 5 Plätze, einkommensabhängige Beiträge.">
+  <meta name="robots" content="index, follow">
+  <title>Kindertagespflege Römernest – Lisa Neufeld · Morsbach</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #f5fdf8;
+      --warm:    #e8f7ef;
+      --sand:    #c9ecd9;
+      --terra:   #2d9e6b;
+      --terra2:  #1f7d52;
+      --sage:    #5bb89a;
+      --sage2:   #3a9478;
+      --text:    #162820;
+      --mid:     #3d6455;
+      --muted:   #7aa090;
+      --line:    #bcdece;
+      --display: 'Fraunces', Georgia, serif;
+      --body:    'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 2.5rem; height: 64px;
+      background: rgba(245,253,248,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-nest { font-size: 1.5rem; line-height: 1; }
+    .nav-name { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--mid); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--terra); }
+    .nav-cta { background: var(--terra); color: #fff !important; padding: 0.4rem 1rem; border-radius: 2rem; }
+    .nav-cta:hover { background: var(--terra2) !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 80px 2.5rem 60px;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-text {}
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--warm); border: 1px solid var(--sand);
+      padding: 0.35rem 0.9rem; border-radius: 2rem;
+      font-size: 0.78rem; font-weight: 500; color: var(--terra);
+      margin-bottom: 1.8rem;
+    }
+    .hero-badge .dot { width: 7px; height: 7px; background: var(--sage); border-radius: 50%; }
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+    h1 em { font-style: italic; color: var(--terra); font-weight: 300; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 480px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--terra); color: #fff;
+      padding: 0.85rem 1.8rem; border-radius: 0.4rem;
+      font-weight: 500; font-size: 0.95rem; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--terra2); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--mid); font-size: 0.9rem; font-weight: 500;
+      text-decoration: none; border-bottom: 1px solid var(--line);
+      padding-bottom: 0.1rem; transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--terra); border-color: var(--terra); }
+
+    .hero-image-wrap { position: relative; }
+    .hero-photo {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover;
+      border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+      display: block;
+    }
+    .hero-photo-placeholder {
+      width: 100%; aspect-ratio: 4/5;
+      border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+      background: var(--warm);
+      border: 2px dashed var(--sand);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.5rem; color: var(--muted); font-size: 0.85rem;
+    }
+    .hero-photo-placeholder .ph-icon { font-size: 2.5rem; opacity: 0.4; }
+    .hero-stat-bubble {
+      position: absolute; bottom: 2rem; left: -2rem;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 1rem; padding: 1rem 1.4rem;
+      box-shadow: 0 4px 20px rgba(44,34,24,0.08);
+      min-width: 160px;
+    }
+    .hero-stat-bubble .num { font-family: var(--display); font-size: 2rem; font-weight: 600; color: var(--terra); line-height: 1; }
+    .hero-stat-bubble .label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 2.5rem; }
+    .inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--terra); margin-bottom: 0.6rem;
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600; line-height: 1.2;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    h2 em { font-style: italic; font-weight: 300; color: var(--terra); }
+    .intro { font-size: 1rem; color: var(--mid); max-width: 600px; line-height: 1.8; margin-bottom: 3rem; }
+
+    /* ── HIGHLIGHTS ── */
+    #highlights { background: var(--warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .hl-card {
+      background: #fff; border-radius: 1rem; padding: 1.75rem 1.5rem;
+      border: 1px solid var(--line);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hl-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(44,34,24,0.07); }
+    .hl-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .hl-card h3 { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .hl-card p { font-size: 0.87rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── ÜBER LISA ── */
+    #lisa { background: var(--cream); }
+    .lisa-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+    .lisa-img-wrap { position: relative; }
+    .lisa-photo {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: 1rem 4rem 1rem 1rem;
+    }
+    .lisa-photo-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      border-radius: 1rem 4rem 1rem 1rem;
+      background: var(--warm); border: 2px dashed var(--sand);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.5rem; color: var(--muted); font-size: 0.85rem;
+    }
+    .lisa-photo-placeholder .ph-icon { font-size: 2.5rem; opacity: 0.4; }
+    .lisa-tag {
+      position: absolute; bottom: -1rem; right: -1rem;
+      background: var(--sage); color: #fff;
+      padding: 0.75rem 1.2rem; border-radius: 0.75rem;
+      font-size: 0.82rem; font-weight: 500; line-height: 1.4;
+      box-shadow: 0 4px 16px rgba(90,126,101,0.3);
+    }
+    .lisa-text p { font-size: 0.97rem; color: var(--mid); line-height: 1.85; margin-bottom: 1rem; }
+    .lisa-facts { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .fact-pill {
+      background: var(--warm); border: 1px solid var(--sand);
+      padding: 0.4rem 0.9rem; border-radius: 2rem;
+      font-size: 0.82rem; color: var(--mid); font-weight: 500;
+    }
+
+    /* ── KONZEPT ── */
+    #konzept { background: var(--warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .konzept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .konzept-card {
+      background: var(--cream); border-radius: 1rem;
+      padding: 1.75rem 1.5rem; border: 1px solid var(--line);
+    }
+    .konzept-card h3 { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; margin-top: 0.75rem; }
+    .konzept-card p { font-size: 0.87rem; color: var(--mid); line-height: 1.75; }
+    .konzept-num { font-family: var(--display); font-size: 2rem; font-weight: 300; color: var(--sand); line-height: 1; }
+
+    /* ── TAGESABLAUF ── */
+    #ablauf { background: var(--cream); }
+    .ablauf-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-item { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; position: relative; }
+    .tl-item:not(:last-child) .tl-line { position: absolute; left: 44px; top: 28px; bottom: -8px; width: 1px; background: var(--line); }
+    .tl-time { font-size: 0.78rem; font-weight: 500; color: var(--terra); padding-top: 0.15rem; text-align: right; white-space: nowrap; }
+    .tl-content { padding: 0 0 1.5rem 1rem; border-left: 2px solid var(--warm); }
+    .tl-content strong { font-size: 0.9rem; color: var(--text); display: block; }
+    .tl-content span { font-size: 0.83rem; color: var(--muted); }
+
+    .info-blocks { display: flex; flex-direction: column; gap: 1.25rem; }
+    .info-block { background: var(--warm); border-radius: 0.75rem; padding: 1.25rem 1.5rem; border: 1px solid var(--line); }
+    .info-block h4 { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .info-block p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── GALERIE ── */
+    #galerie { background: var(--warm); border-top: 1px solid var(--line); }
+    .masonry {
+      columns: 3;
+      column-gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      background: var(--sand);
+    }
+    .masonry-item img {
+      width: 100%; display: block;
+      transition: transform 0.4s ease, opacity 0.3s;
+      border-radius: 1rem;
+    }
+    .masonry-item:hover img { transform: scale(1.03); opacity: 0.95; }
+    .masonry-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0.6rem 0.9rem;
+      background: linear-gradient(transparent, rgba(22,40,32,0.65));
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      border-radius: 0 0 1rem 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .masonry-item:hover .masonry-caption { opacity: 1; }
+
+    /* ── ANMELDUNG ── */
+    #anmelden { background: var(--cream); border-top: 1px solid var(--line); }
+    .anmelden-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+    .steps { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+    .step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px;
+      background: var(--terra); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: var(--display); font-size: 0.9rem; font-weight: 600;
+    }
+    .step-text strong { font-size: 0.9rem; color: var(--text); display: block; margin-bottom: 0.2rem; }
+    .step-text p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
+
+    .kontakt-box {
+      background: var(--warm); border: 1px solid var(--line);
+      border-radius: 1.25rem; padding: 2rem;
+    }
+    .kontakt-box h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 1.25rem; }
+    .krow { display: flex; gap: 0.75rem; align-items: baseline; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+    .krow:last-of-type { border-bottom: none; }
+    .krow .klabel { font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); min-width: 90px; }
+    .krow .kval { font-size: 0.9rem; color: var(--text); }
+    .krow a { color: var(--terra); text-decoration: none; }
+    .krow a:hover { text-decoration: underline; }
+    .open-badge {
+      display: inline-block; background: var(--sage); color: #fff;
+      padding: 0.5rem 1rem; border-radius: 0.5rem;
+      font-size: 0.85rem; font-weight: 500; margin-top: 1.25rem;
+    }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.5rem; border: 1px solid var(--terra);
+      color: var(--terra); padding: 0.6rem 1.2rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .download-btn:hover { background: var(--terra); color: #fff; }
+
+    /* ── HINWEIS PLÄTZE ── */
+    .plaetze-banner {
+      background: linear-gradient(135deg, var(--terra) 0%, var(--terra2) 100%);
+      color: #fff; border-radius: 1.25rem;
+      padding: 2rem 2.5rem; margin-bottom: 3rem;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .plaetze-banner .pb-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .plaetze-banner h3 { font-family: var(--display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .plaetze-banner p { font-size: 0.9rem; opacity: 0.9; line-height: 1.6; }
+
+    /* ── MAP ── */
+    #lage { background: var(--warm); border-top: 1px solid var(--line); }
+    .map-wrap { border-radius: 1rem; overflow: hidden; border: 1px solid var(--line); height: 300px; margin-top: 2rem; }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; filter: saturate(0.7) contrast(0.95); }
+    .lage-text { max-width: 560px; }
+    .lage-text p { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 0.75rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text); color: var(--cream);
+      padding: 2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    footer .fn { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--cream); }
+    footer .fsub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+    footer .flinks { display: flex; gap: 1.5rem; }
+    footer .flinks a { font-size: 0.8rem; color: var(--muted); text-decoration: none; }
+    footer .flinks a:hover { color: var(--cream); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 90px; gap: 2.5rem; }
+      .hero-image-wrap { order: -1; }
+      .hero-stat-bubble { left: 1rem; bottom: 1rem; }
+      section { padding: 55px 1.25rem; }
+      .lisa-layout, .ablauf-layout, .anmelden-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+      .galerie-grid .tall { grid-row: span 1; }
+      .masonry { columns: 2; }
+      footer { padding: 1.5rem 1.25rem; }
+      .plaetze-banner { flex-direction: column; gap: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="nav-nest">🪺</span>
+    <span class="nav-name">Römernest</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#highlights">Kurzübersicht</a></li>
+    <li><a href="#lisa">Lisa</a></li>
+    <li><a href="#konzept">Konzept</a></li>
+    <li><a href="#ablauf">Tagesablauf</a></li>
+    <li><a href="#anmelden" class="nav-cta">Platz anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px; margin:0 auto; padding: 0 2.5rem;">
+  <div class="hero" style="padding-left:0; padding-right:0;">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Kindertagespflege · Morsbach-Rom · seit 2018
+      </div>
+      <h1>Geborgener Start<br>ins <em>große Leben.</em></h1>
+      <p class="hero-sub">
+        Herzliche Betreuung für Kleinkinder von 1 bis 3 Jahren –
+        familiär, liebevoll und mitten in der Natur des Bergischen Landes.
+        Bei Lisa im Römernest sind Kinder mehr als gut aufgehoben.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#anmelden">Platz anfragen →</a>
+        <a class="btn-secondary" href="#konzept">Konzept ansehen</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img
+        class="hero-photo"
+        src="https://image.jimcdn.com/app/cms/image/transf/none/path/s40f6b58436f30931/image/i060be64e603956a8/version/1762768544/image.png"
+        alt="Kindertagespflege Römernest – Lisa Neufeld"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      >
+      <div class="hero-photo-placeholder" style="display:none;">
+        <span class="ph-icon">🌿</span>
+        <span>Foto folgt</span>
+      </div>
+      <div class="hero-stat-bubble">
+        <div class="num">seit '18</div>
+        <div class="label">Qualifizierte Tagesmutter</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="inner">
+    <div class="section-label">Auf einen Blick</div>
+    <h2>Was das Römernest<br><em>besonders</em> macht.</h2>
+    <div class="highlight-grid">
+      <div class="hl-card">
+        <span class="hl-icon">👨‍👩‍👧‍👦</span>
+        <h3>Familiäre Gruppe</h3>
+        <p>Maximal 5 Kinder – so bekommt jedes Kind die Aufmerksamkeit, die es braucht. Kein Kindergarten-Stress, weniger Lärm.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🌲</span>
+        <h3>Natur pur</h3>
+        <p>Rom liegt idyllisch am Waldrand. Täglich frische Luft, Erkundungsgänge, Rehe schauen manchmal durchs Fenster in unserem Garten.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🐾</span>
+        <h3>Tiere als Freunde</h3>
+        <p>Hündin Bima und Kater Leo gehören dazu. Kinder lernen spielerisch den liebevollen Umgang mit Tieren.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🍲</span>
+        <h3>Frisch gekochtes Essen</h3>
+        <p>Das Mittagessen wird täglich frisch zubereitet. Obst, Snacks und Getränke inklusive – für nur 2,50 € pro Tag.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">💶</span>
+        <h3>Einkommensabhängig</h3>
+        <p>Die Beiträge richten sich wie bei Kindergärten nach dem Einkommen. Geschwisterkinder zahlen nichts.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🎓</span>
+        <h3>Qualifiziert</h3>
+        <p>Lisa hat die staatlich anerkannte Qualifizierung zur Kindertagespflegeperson absolviert – beim katholischen Bildungszentrum Wipperführt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISA -->
+<section id="lisa">
+  <div class="inner">
+    <div class="lisa-layout">
+      <div class="lisa-img-wrap">
+        <img
+          class="lisa-photo"
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/s40f6b58436f30931/image/i171e6512e5b4f3cf/version/1725428629/image.png"
+          alt="Lisa Neufeld – Tagesmutter Römernest"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <div class="lisa-photo-placeholder" style="display:none;">
+          <span class="ph-icon">🌸</span>
+          <span>Foto von Lisa</span>
+        </div>
+        <div class="lisa-tag">Qualifizierte<br>Tagesmutter<br>seit Juli 2018</div>
+      </div>
+      <div class="lisa-text">
+        <div class="section-label">Über mich</div>
+        <h2>Hallo, ich bin <em>Lisa.</em></h2>
+        <p>
+          Mein Name ist Elisabeth – alle nennen mich Lisa. Seit 2007 lebe ich mit meiner Familie
+          hier in Rom, einem kleinen Ortsteil von Morsbach im Bergischen Land.
+        </p>
+        <p>
+          Nach Jahren als PTA merkte ich: Das war nicht meine Berufung.
+          Was mich wirklich erfüllt, war immer die Zeit mit Kindern – schon als Teenager habe ich
+          gern auf sie aufgepasst. Anfang 2018 habe ich die Ausbildung zur qualifizierten
+          Kindertagespflegeperson gemacht und bin seitdem als Tagesmutter tätig.
+        </p>
+        <p>
+          Ich bin <strong>geduldig, verlässlich und herzlich</strong> – und ich glaube, dass Kinder
+          am besten lernen, wenn sie sich sicher und angenommen fühlen. Dafür gebe ich jeden Tag
+          mein Bestes.
+        </p>
+        <div class="lisa-facts">
+          <span class="fact-pill">🏡 Morsbach-Rom</span>
+          <span class="fact-pill">👶 1–3 Jahre</span>
+          <span class="fact-pill">📋 Qualifiziert nach §23 SGB VIII</span>
+          <span class="fact-pill">🐕 Tierfreundlich</span>
+          <span class="fact-pill">🌿 Viel Natur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONZEPT -->
+<section id="konzept">
+  <div class="inner">
+    <div class="section-label">Mein Ansatz</div>
+    <h2>Mit Herz und <em>Konzept.</em></h2>
+    <p class="intro">
+      Kleinkinder brauchen Geborgenheit, Freiraum, liebevolle Begleitung und Grenzen.
+      Diese vier Dinge stehen im Mittelpunkt meiner täglichen Arbeit.
+    </p>
+    <div class="konzept-grid">
+      <div class="konzept-card">
+        <div class="konzept-num">01</div>
+        <h3>Sanfte Eingewöhnung</h3>
+        <p>2–4 Wochen, Schritt für Schritt. Zuerst kommen Eltern und Kind gemeinsam, dann werden die Trennungszeiten langsam verlängert. Erst wenn das Kind entspannt schläft, gilt die Eingewöhnung als abgeschlossen.</p>
+      </div>
+      <div class="konzept-card">
+        <div class="konzept-num">02</div>
+        <h3>Freies Spielen & Entdecken</h3>
+        <p>Kinder lernen am meisten, wenn sie selbst forschen dürfen. Ich gebe Raum für eigene Ideen – drinnen und draußen. Garten, Wald, Wiesen: hier gibt es immer etwas zu entdecken.</p>
+      </div>
+      <div class="konzept-card">
+        <div class="konzept-num">03</div>
+        <h3>Selbstständigkeit fördern</h3>
+        <p>Anziehen, Hände waschen, den Tisch abräumen – vieles dürfen Kinder bei mir schon selbst machen. Diese Erfolgserlebnisse stärken Selbstvertrauen und Kreativität nachhaltig.</p>
+      </div>
+      <div class="konzept-card">
+        <div class="konzept-num">04</div>
+        <h3>Sprache & Gemeinschaft</h3>
+        <p>Lieder, Tänze, Geschichten – täglich. Ich fördere aktiv die Sprachentwicklung und stärke den Zusammenhalt der kleinen Gruppe durch gemeinsame Rituale.</p>
+      </div>
+      <div class="konzept-card">
+        <div class="konzept-num">05</div>
+        <h3>Geburtstagskultur</h3>
+        <p>Jedes Kind bekommt an seinem Geburtstag eine Krone und ein kleines Geschenk. Eltern dürfen kleine Snacks mitbringen – gegessen wird immer gemeinsam am Tisch.</p>
+      </div>
+      <div class="konzept-card">
+        <div class="konzept-num">06</div>
+        <h3>Offene Elternpartnerschaft</h3>
+        <p>Ohne Eltern geht es nicht. Ich lege großen Wert auf ein ehrliches, vertrauensvolles Miteinander. Fragen und Probleme dürfen und sollen offen angesprochen werden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGESABLAUF -->
+<section id="ablauf">
+  <div class="inner">
+    <div class="section-label">Unser Tag</div>
+    <h2>Ein geregelter <em>Alltag</em><br>tut Kindern gut.</h2>
+    <div class="ablauf-layout">
+      <div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-line"></div>
+            <div class="tl-time">7:30–8:30</div>
+            <div class="tl-content">
+              <strong>Ankommen & freies Spielen</strong>
+              <span>Sanfter Start in den Tag</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"></div>
+            <div class="tl-time">8:30–8:45</div>
+            <div class="tl-content">
+              <strong>Frühstück</strong>
+              <span>Eltern geben ein gesundes Frühstück mit</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"></div>
+            <div class="tl-time">8:45–9:15</div>
+            <div class="tl-content">
+              <strong>Morgenkreis</strong>
+              <span>Lieder, Begrüßung, gemeinsame Zeit</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"></div>
+            <div class="tl-time">9:15–11:30</div>
+            <div class="tl-content">
+              <strong>Spielen & Rausgehen</strong>
+              <span>Angeleitetes und freies Spiel, täglich frische Luft</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"></div>
+            <div class="tl-time">11:30–11:45</div>
+            <div class="tl-content">
+              <strong>Mittagessen</strong>
+              <span>Täglich frisch zubereitet</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-line"></div>
+            <div class="tl-time">12:00–14:00</div>
+            <div class="tl-content">
+              <strong>Mittagsruhe</strong>
+              <span>Jedes Kind schläft so lange es braucht</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:00–15:00</div>
+            <div class="tl-content">
+              <strong>Freies Spielen & Abholzeit</strong>
+              <span>Entspanntes Ausklingen des Tages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-blocks">
+        <div class="info-block">
+          <h4>🕐 Öffnungszeiten</h4>
+          <p><strong>Montag bis Donnerstag</strong><br>7:30 Uhr – 15:00 Uhr (30 Wochenstunden)<br>Freitags keine Betreuung.</p>
+        </div>
+        <div class="info-block">
+          <h4>📦 Was mitgebracht wird</h4>
+          <p>Wechselkleidung, Matschhose, Gummistiefel, rutschfeste Socken. Im Sommer Sonnenschutz, im Winter Schneeanzug. Schnuller und Kuscheltier zum Schlafen gerne mitgeben.</p>
+        </div>
+        <div class="info-block">
+          <h4>🍎 Essen & Kosten</h4>
+          <p>Mittagessen, Getränke, Obst und Snacks: <strong>2,50 € pro Tag</strong>. Bitte eine auslaufsichere Trinkflasche mitgeben. Frühstück bringen Kinder selbst mit.</p>
+        </div>
+        <div class="info-block">
+          <h4>🏖️ Urlaub & Ferien</h4>
+          <p>Urlaubsplanung wird bis 15. November fürs Folgejahr festgelegt. Haupturlaub in NRW-Sommerferien. Feiertage sind frei.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="inner">
+    <div class="section-label">Eindrücke</div>
+    <h2>Ein Blick in unseren <em>Alltag.</em></h2>
+    <p class="intro">Drinnen spielen, draußen entdecken – so sehen unsere Tage im Römernest aus.</p>
+    <div class="masonry">
+      <div class="masonry-item">
+        <img src="fotos/hof_spielen.jpg" alt="Außenbereich des Römernests mit Spielzeug und Zaun">
+        <div class="masonry-caption">Unser Hof – Spielparadies vor der Tür 🏡</div>
+      </div>
+      <div class="masonry-item">
+        <img src="fotos/giesskannen.jpg" alt="Kleine Hände mit bunten Gießkannen beim Blumen gießen">
+        <div class="masonry-caption">Die Blumen haben auch Durst ☀️</div>
+      </div>
+      <div class="masonry-item">
+        <img src="fotos/holzspielzeug.jpg" alt="Kinderhand erkundet Holzspielzeug">
+        <div class="masonry-caption">Entdecken mit allen Sinnen 🤲</div>
+      </div>
+      <div class="masonry-item">
+        <img src="fotos/trinkflaschen.jpg" alt="Bunte Trinkflaschen der Kinder auf der Bank">
+        <div class="masonry-caption">Jedes Kind hat seine eigene Flasche 💧</div>
+      </div>
+      <div class="masonry-item">
+        <img src="fotos/klettergeraet.jpg" alt="Kind klettert auf Pikler-Dreieck im Spielzimmer">
+        <div class="masonry-caption">Klettern, balancieren, entdecken 🧗</div>
+      </div>
+      <div class="masonry-item">
+        <img src="fotos/spaziergang_winter.jpg" alt="Winterspaziergang mit Kindern im Schnee">
+        <div class="masonry-caption">Auch im Winter geht's raus ❄️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANMELDUNG -->
+<section id="anmelden">
+  <div class="inner">
+    <div class="plaetze-banner">
+      <div class="pb-icon">📅</div>
+      <div>
+        <h3>Freie Plätze voraussichtlich ab September 2027</h3>
+        <p>Melden Sie sich jetzt schon an – die Warteliste läuft, und ein früher Vorstellungsbogen sichert Ihnen einen Gesprächstermin.</p>
+      </div>
+    </div>
+    <div class="anmelden-layout">
+      <div>
+        <div class="section-label">So geht's</div>
+        <h2>In vier Schritten<br>zum <em>Betreuungsplatz.</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <strong>Vorstellungsbogen ausfüllen</strong>
+              <p>Laden Sie den Bogen herunter, füllen ihn aus und schicken ihn per E-Mail an Lisa.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <strong>Kennenlerngespräch</strong>
+              <p>Lisa lädt Sie und Ihr Kind zu einem unverbindlichen Besuch ein. Sie können alles in Ruhe anschauen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <strong>Zusage & Vertrag</strong>
+              <p>Besteht Sympathie auf beiden Seiten, erhalten Sie eine Zusage. Dann wird der privatrechtliche Vertrag abgeschlossen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-text">
+              <strong>Förderantrag stellen</strong>
+              <p>Der Antrag auf Förderung der Kindertagespflege geht ans Kreisjugendamt Gummersbach – Lisa hilft dabei.</p>
+            </div>
+          </div>
+        </div>
+        <a class="download-btn" href="Vorstellungsbogen_Roemernest.pdf" target="_blank">
+          ↓ Vorstellungsbogen herunterladen
+        </a>
+      </div>
+      <div class="kontakt-box">
+        <h3>Direkter Kontakt</h3>
+        <div class="krow">
+          <span class="klabel">Name</span>
+          <span class="kval">Elisabeth (Lisa) Neufeld</span>
+        </div>
+        <div class="krow">
+          <span class="klabel">Telefon</span>
+          <span class="kval"><a href="tel:+4915225822971">0152 25822971</a></span>
+        </div>
+        <div class="krow">
+          <span class="klabel">E-Mail</span>
+          <span class="kval"><a href="mailto:roemernest@gmx.de">roemernest@gmx.de</a></span>
+        </div>
+        <div class="krow">
+          <span class="klabel">Adresse</span>
+          <span class="kval">Rom 13 · 51597 Morsbach</span>
+        </div>
+        <div class="krow">
+          <span class="klabel">Alter</span>
+          <span class="kval">1 bis 3 Jahre</span>
+        </div>
+        <div class="krow">
+          <span class="klabel">Plätze</span>
+          <span class="kval">max. 5 Kinder</span>
+        </div>
+        <div class="open-badge">Mo–Do · 7:30–15:00 Uhr</div>
+        <br><br>
+        <p style="font-size:0.82rem; color:var(--muted); line-height:1.7;">
+          Am schnellsten erreichen Sie Lisa direkt per Telefon oder E-Mail –
+          Über Littlebird werden die Anfragen verzögert weitergeleitet.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAGE -->
+<section id="lage">
+  <div class="inner">
+    <div class="section-label">Wo wir sind</div>
+    <h2>Mitten in der <em>Natur.</em></h2>
+    <div class="lage-text">
+      <p>
+        Rom ist ein ruhiger Ortsteil der Gemeinde Morsbach im Oberbergischen Kreis –
+        umgeben von Wald, Wiesen und frischer Luft. Ideal für neugierige kleine Menschen.
+        Rehe schauen manchmal direkt durchs Fenster.
+      </p>
+      <p>
+        <strong>Adresse:</strong> Rom 13 · 51597 Morsbach<br>
+        Gut erreichbar aus Morsbach, Reichshof, Waldbröl und Wiehl.
+      </p>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=7.695,50.884,7.747,50.914&layer=mapnik&marker=50.899149,7.720926"
+        title="Kindertagespflege Römernest – Morsbach-Rom">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="fn">🪺 Kindertagespflege Römernest</div>
+    <div class="fsub">Elisabeth Neufeld · Rom 13 · 51597 Morsbach</div>
+  </div>
+  <div class="flinks">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
